@@ -1,0 +1,97 @@
+{
+  "apiVersion" : "v1",
+  "kind" : "Service",
+  "metadata" : {
+    "annotations" : {
+      "fabric8.io/issue-system" : "GitHub",
+      "fabric8.io/issue-tracker-url" : "https://github.com/spring-projects/spring-boot/issues",
+      "fabric8.io/scm-tag" : "HEAD",
+      "fabric8.io/scm-url" : "https://github.com/spring-projects/spring-boot/k8s-robbinclient",
+      "prometheus.io/port" : "9779",
+      "prometheus.io/scrape" : "true"
+    },
+    "creationTimestamp" : "2020-05-26T06:47:16Z",
+    "labels" : {
+      "app" : "k8s-robbinclient",
+      "expose" : "true",
+      "group" : "org.springframework.cloud",
+      "provider" : "fabric8",
+      "version" : "1.0"
+    },
+    "managedFields" : [ {
+      "apiVersion" : "v1",
+      "fieldsType" : "FieldsV1",
+      "fieldsV1" : {
+        "f:metadata" : {
+          "f:annotations" : {
+            "." : { },
+            "f:fabric8.io/issue-system" : { },
+            "f:fabric8.io/issue-tracker-url" : { },
+            "f:fabric8.io/scm-tag" : { },
+            "f:fabric8.io/scm-url" : { },
+            "f:prometheus.io/port" : { },
+            "f:prometheus.io/scrape" : { }
+          },
+          "f:labels" : {
+            "." : { },
+            "f:app" : { },
+            "f:expose" : { },
+            "f:group" : { },
+            "f:provider" : { },
+            "f:version" : { }
+          }
+        },
+        "f:spec" : {
+          "f:externalTrafficPolicy" : { },
+          "f:ports" : {
+            "." : { },
+            "k:{\"port\":8080,\"protocol\":\"TCP\"}" : {
+              "." : { },
+              "f:name" : { },
+              "f:port" : { },
+              "f:protocol" : { },
+              "f:targetPort" : { }
+            }
+          },
+          "f:selector" : {
+            "." : { },
+            "f:app" : { },
+            "f:group" : { },
+            "f:provider" : { }
+          },
+          "f:sessionAffinity" : { },
+          "f:type" : { }
+        }
+      },
+      "manager" : "okhttp",
+      "operation" : "Update",
+      "time" : "2020-05-26T06:47:16Z"
+    } ],
+    "name" : "k8s-robbinclient",
+    "namespace" : "default",
+    "resourceVersion" : "50757",
+    "selfLink" : "/api/v1/namespaces/default/services/k8s-robbinclient",
+    "uid" : "e83770a4-29ae-4fbf-babe-e8afa8520cd2"
+  },
+  "spec" : {
+    "clusterIP" : "10.101.195.53",
+    "externalTrafficPolicy" : "Cluster",
+    "ports" : [ {
+      "name" : "http",
+      "nodePort" : 31518,
+      "port" : 8080,
+      "protocol" : "TCP",
+      "targetPort" : 8080
+    } ],
+    "selector" : {
+      "app" : "k8s-robbinclient",
+      "group" : "org.springframework.cloud",
+      "provider" : "fabric8"
+    },
+    "sessionAffinity" : "None",
+    "type" : "NodePort"
+  },
+  "status" : {
+    "loadBalancer" : { }
+  }
+}

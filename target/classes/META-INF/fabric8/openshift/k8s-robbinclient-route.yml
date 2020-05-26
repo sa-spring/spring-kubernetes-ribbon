@@ -1,0 +1,21 @@
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    fabric8.io/scm-url: https://github.com/spring-projects/spring-boot/k8s-robbinclient
+    fabric8.io/scm-tag: HEAD
+    fabric8.io/issue-system: GitHub
+    fabric8.io/issue-tracker-url: https://github.com/spring-projects/spring-boot/issues
+  labels:
+    app: k8s-robbinclient
+    provider: fabric8
+    version: "1.0"
+    group: org.springframework.cloud
+  name: k8s-robbinclient
+spec:
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: k8s-robbinclient
